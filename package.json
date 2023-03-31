@@ -1,5 +1,5 @@
 {
-  "name": "Red-Dragon-MD",
+  "name": "White-Lion-MD",
   "version": "4.0.0",
   "description": "Automated whatsapp md bot created using nodejs",
   "main": "boot.js",
@@ -10,7 +10,7 @@
   "keywords": [
     "termux",
     "whatsapp",
-    "red-dragon",
+    "white-lion",
     "base",
     "baileys-md",
     "bot",
