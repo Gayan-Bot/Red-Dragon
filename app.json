@@ -1,8 +1,8 @@
 {
-  "name": "RED DRAGON BOT",
-  "description": "𝙍𝙀𝘿╺ 𝘿𝙍𝘼𝙂𝙊𝙉 - 𝘔𝘋 | By: RED-DRAGONᵀᴹ | 𝐌𝐑: ☬𝔻𝔸ℝ𝕂༒ℕ𝕀𝕋ℝ𝕆࿐",
-  "repository": "https://github.com/prabhasha2006/Red-Dragon",
-  "logo": "https://i.ibb.co/VCtXyTK/20220730-002949.jpg",
+  "name": "WHITE LION BOT",
+  "description": "𝙒𝙃𝙄𝙏𝙀╺ 𝙇𝙄𝙊𝙉 - 𝘔𝘋 | By: WHITE-LION | 𝐌𝐑: 𝗖𝗛𝗨𝗧𝗜 𝗣𝗨𝗧𝗛𝗔",
+  "repository": "https://github.com/Gayan-Bot/Red-Dragon",
+  "logo": "https://i.imgur.com/V6mkjRW.jpeg",
   "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
   "buildpacks": [
     {
