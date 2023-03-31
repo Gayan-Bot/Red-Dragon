@@ -1,31 +1,31 @@
 /*
 
-█   █   █       █    █▅   ▅█    █      █     ██████     █      █    █     █
-█ █     █       █    █  █ █  █    █      █       █        █      █    █     █
-██      █       █    █   █   █    █      █       █        ████████    █     █
-█ █     █       █    █       █    █      █       █        █      █    █     █
-█   █    ▀▅▃▅▀    █        █    ▀▅▃▅▀       █        █      █    ▀▅▃▅▀  
+████            ████           █   █           ████           █▊     █
+█                █    █            █ █           █    █           █ ▋    █
+█ ███          █████             █            █████          █   ▋  █
+███ █          █      █            █           █      █          █   ▊ █
+      █         █       █            █          █       █          █    ▋█
 ╦   ╦      ╔══╗      ╦        ╦     ╔══╗         ╦        ╦      ╦      ╔══╗
 
 ╔═══❤️═══🧡═══💛═══🤍═══💚═══💙═══💜═══╗
 ║
 ║
 ║
-╠🆁🅴🅳╬🅳🆁🅰🅶🅾🅽╣ 𝘾𝙧𝙚𝙖𝙩𝙚𝙙 𝘽𝙮 [`𝗞.𝗣𝗿𝗮𝗯𝗵𝗮𝘀𝗵𝗮´]
+╠🆆🅷🅸🆃🅴╬🅻🅸🅾︎🅽╣ 𝘾𝙧𝙚𝙖𝙩𝙚𝙙 𝘽𝙮 [`𝗚𝗮𝘆𝗮𝗻´]
 ║
 ║
 ║
-╠═𝕆𝔹𝔽𝕌𝕊ℂ𝔸𝕋𝔼𝔻═𝔹𝕐═╣ 😎𝙆.𝙋𝙧𝙖𝙗𝙝𝙖𝙨𝙝𝙖❯❯
+╠═𝕆𝔹𝔽𝕌𝕊ℂ𝔸𝕋𝔼𝔻═𝔹𝕐═╣ 😎𝗚𝗮𝘆𝗮𝗻❯❯
 ║
-╠═══════(github.com/prabhasha2006)═══════╣
+╠═══════(github.com/Gayan-Bot)═══════╣
 ║
 ║    ▒ ▒          ▒ ▒ ▒       ▒ ▒ ▒ ▒ ▒  
-║    ▒    ▒      ▒     ▒          ▒      
-║    ▒    ▒     ▒       ▒         ▒       
-║    ▒ ▒        ▒       ▒         ▒
-║    ▒    ▒     ▒       ▒         ▒
-║    ▒    ▒      ▒     ▒          ▒
-║    ▒ ▒          ▒ ▒ ▒           ▒
+║    ▒    ▒      ▒     ▒           ▒      
+║    ▒    ▒     ▒       ▒          ▒       
+║    ▒ ▒        ▒       ▒          ▒
+║    ▒    ▒     ▒       ▒          ▒
+║    ▒    ▒      ▒     ▒           ▒
+║    ▒ ▒          ▒ ▒ ▒            ▒
 ║   
 ║
 ╚═══❤️═══🧡═══💛═══🤍═══💚═══💙═══💜═══╝
@@ -149,50 +149,50 @@ if (global.db) setInterval(async () => {
     if (global.db.data) await global.db.write()
   }, 30 * 1000)
 
-async function startKUMUTHU() {
-    const KUMUTHU = KUMUTHUConnect({
+async function startGAYAN() {
+    const GAYAN = KMUTHUConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
         browser: ['Subscribe Xeon','Safari','1.0.0'],
         auth: state
     })
 
-    store.bind(KUMUTHU.ev)
+    store.bind(KMUTHU.ev)
     
     // anticall auto block
     if (global.callblock === "true"){
-    KUMUTHU.ws.on('CB:call', async (json) => {
+    KMUTHU.ws.on('CB:call', async (json) => {
     const callerId = json.content[0].attrs['call-creator']
     if (json.content[0].tag == 'offer') {
-    let xeonfek = await KUMUTHU.sendContact(callerId, global.owner)
-    KUMUTHU.sendMessage(callerId, { text: `⚠️RED-DRAGON Automatic Block System!\n⚠️Don't Call Bot!\n⚠️Please Ask Or Contact The Owner To Unblock You!`}, { quoted : xeonfek })
+    let xeonfek = await GAYAN.sendContact(callerId, global.owner)
+    KMUTHU.sendMessage(callerId, { text: `⚠️WHITE-lION Automatic Block System!\n⚠️Don't Call Bot!\n⚠️Please Ask Or Contact The Owner To Unblock You!`}, { quoted : xeonfek })
     await sleep(8000)
-    await KUMUTHU.updateBlockStatus(callerId, "block")
+    await KMUTHU.updateBlockStatus(callerId, "block")
     }
     })}else{}
 
-    KUMUTHU.ev.on('messages.upsert', async chatUpdate => {
+    KMUTHU.ev.on('messages.upsert', async chatUpdate => {
         //console.log(JSON.stringify(chatUpdate, undefined, 2))
         try {
         mek = chatUpdate.messages[0]
         if (!mek.message) return
         mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
         if (mek.key && mek.key.remoteJid === 'status@broadcast') return
-        if (!KUMUTHU.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
+        if (!KMUTHU.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
         if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
-        m = smsg(KUMUTHU, mek, store)
-        require("./Red-Dragon")(KUMUTHU, m, chatUpdate, store)
+        m = smsg(KMUTHU, mek, store)
+        require("./White-Lion")(KMUTHU, m, chatUpdate, store)
         } catch (err) {
             console.log(err)
         }
     })
     
     // Group Update
-    KUMUTHU.ev.on('groups.update', async pea => {
+    KMUTHU.ev.on('groups.update', async pea => {
        //console.log(pea)
     // Get Profile Picture Group
        try {
-       ppgc = await KUMUTHU.profilePictureUrl(pea[0].id, 'image')
+       ppgc = await KMUTHU.profilePictureUrl(pea[0].id, 'image')
        } catch {
        ppgc = 'https://shortlink.KUMUTHUarridho.my.id/rg1oT'
        }
@@ -261,7 +261,7 @@ Time  =  ${xtime} `
    //dont forget to put my name(Xeon) as credit
    //you fail to put, i sue you for sure!
    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: '🙏WELCOME🙏'}, type: 1}
+    {buttonId: `owner`, buttonText: {displayText: '🙏WELCOME🙏 සාදරයෙන් පිළිගන්නවා 🥰'}, type: 1}
     ]
 let buttonMessage = {
     image: { url: 'https://i.ibb.co/0h3Sv26/20220805-080104.jpg'},
@@ -279,7 +279,7 @@ KUMUTHU.sendMessage(anu.id, buttonMessage)
                 	let xeonName = num
                     const xeonmembers = metadata.participants.length
                     let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: xeonbuffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'xeon', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
-                     xeonbody = `😒🌹 Bye👋 @${xeonName.split("@")[0]}
+                     xeonbody = `😒🌹 Bye👋 @${xeonName.split("@යන අයට යන්න දෙන්න 😒")[0]}
 
 😒🌹 Left From  ${metadata.subject}
 😒🌹 ${xeonmembers} Members
